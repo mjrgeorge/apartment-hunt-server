@@ -19,13 +19,8 @@ app.use(express.static('service'));
 app.use(fileUpload());
 
 // MONGODB CONNECTION
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.xekkt.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.q388q.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 client.connect((err) => {
  //================================== ALL COLLECTION ======================================
@@ -143,7 +138,7 @@ app.post('/isAdmin', (req, res) => {
 
 // Root:
 app.get('/', (req, res) => {
-  res.send('The Apartment Hunt Server is running');
+  res.send('The Testing Apartment Hunt Server is running');
 });
 
 // Listener port
